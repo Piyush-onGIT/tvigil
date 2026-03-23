@@ -21,7 +21,7 @@ void enter_critical_section(Registry &registry, const std::string &name) {
   /*
    * --------------------------------CAS-------------------------------------
    * value.compare_exchange_weak(expected, desired): it compares max_concurrent
-   * and peak if fails (unequal to what was read last) peak is updated to
+   * and peak if fails (unequal to what was read last) 'expected' is updated to
    * max_concurrent and returns false. If pass (equal, value is still the same
    * which was last read by this thread), max_concurrent is set to current.
    * -------------------------------------------------------------------------
